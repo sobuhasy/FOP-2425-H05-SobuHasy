@@ -8,15 +8,15 @@ public class Airspace {
     private static Airspace INSTANCE = null;
 
 
-    public static Airspace get(){
-        if(INSTANCE == null){
+    public static Airspace get() {
+        if (INSTANCE == null) {
             INSTANCE = new Airspace();
         }
         return INSTANCE;
     }
 
-
-    private final Set<Flying> flyingInAirspace = new HashSet<>();
+    // TODO: H5.1.1 - Uncomment the following lines
+    /* private final Set<Flying> flyingInAirspace = new HashSet<>();
 
     private Airspace(){
 
@@ -28,10 +28,9 @@ public class Airspace {
 
     void deregister(Flying flying){
         flyingInAirspace.remove(flying);
-    }
+    } */
 
-
-    void scanAirspace(){
-        // TODO: Student Implementation
+    void scanAirspace() {
+        // TODO: H5.5
     }
 }
