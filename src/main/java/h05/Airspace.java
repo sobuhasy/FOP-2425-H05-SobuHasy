@@ -16,7 +16,7 @@ public class Airspace {
     }
 
     // TODO: H5.1.1 - Uncomment the following lines
-    /* private final Set<Flying> flyingInAirspace = new HashSet<>();
+    private final Set<Flying> flyingInAirspace = new HashSet<>();
 
     private Airspace(){
 
@@ -28,9 +28,22 @@ public class Airspace {
 
     void deregister(Flying flying){
         flyingInAirspace.remove(flying);
-    } */
+    }
 
     void scanAirspace() {
         // TODO: H5.5
+        System.out.println("Scanning...");
+        if (flyingInAirspace.isEmpty()){
+            System.out.println("Airspace is empty");
+        } else {
+            for (Flying flying : flyingInAirspace){
+                String message = flying.getIdentifier() + " is flying in airspace";
+                if (flying instanceof PassengerPlane){
+                    PassengerPlane passengerPlane = (PassengerPlane) flying;
+                    message += " (" + passengerPlane.getPassengerCount() + " PAX)";
+                }
+                System.out.println(message);
+            }
+        }
     }
 }
